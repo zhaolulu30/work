@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab组件</title>
+    <style>
+    body{
+        font-family: sans-serif;
+    }
+
+    div.tab{
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background: #f1f1f1;
+    }
+
+    div.tab button{
+        background: inherit;
+        float: left;
+        border: none;
+        outline: none;;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    div.tab button:hover{
+        background: #ddd;
+    }
+
+    div.tab button.active{
+        background: #ccc;
+    }
+
+    .tabcontent{
+        display: none;
+        padding: 16px 12px;
+        border:1px solid #ccc;
+        border-top: none;
+    }
+
+    </style>
+
+    <script>
+    window.onload=function(){
+        var tablinks=document.getElementsByTagName("button");
+        var tabcontent=document.getElementsByClassName("tabcontent")
+        var close=document.getElementsByClassName("close");
+
+        for(var i=0;i<tablinks.length;i++){
+            tablinks[i].index=i;  //给每个按钮加上索引值
+            tablinks[i].onclick=function(){
+                //清空所有的className，并隐藏选项
+                for(var i=0;i<tablinks.length;i++){
+                    tablinks[i].className="";
+                    tabcontent[i].style.display='none';
+                }
+
+                // 点击谁就让当前内容显示,并加上active
+                tablinks[this.index].className=' active';
+                tabcontent[this.index].style.display="block";
+
+
+            }
+        }
+    };
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" class="active" >第一项</button>
+        <button class="tablinks">第二项</button>
+        <button class="tablinks">第三项</button>
+    </div>
+            <div class="tabcontent" style="display:block">
+                <h3>内容1</h3>
+            </div>
+       
+            <div class="tabcontent" >
+                <h3>内容2</h3>
+            </div>
+       
+            <div class="tabcontent" >
+                <h3>内容3</h3>
+            </div>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关键字高亮</title>
+</head>
+<body>
+    <h2>关键字高亮</h2>
+    <p id="keyWords">需要高亮的关键字有JavaScript、还有CSS,以及HTML</p>
+    <script>
+    window.onload=function(){
+        var keyWords=document.getElementById("keyWords");
+
+        function HeightLight(ele,keys,color){  
+            var k="";
+            for(var i=0;i<keys.length;i++){
+                k=keys[i];  //获取关键字对象
+                //替换关键字的数据
+                ele.innerHTML=ele.innerHTML.replace(k,"<span style='color:"+(color||"#000")+" '>"+k+"</span>");
+
+            }
+        }
+
+        HeightLight(keyWords,
+        [
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],"red");
+    };
+    </script>
+</body>
+</html>

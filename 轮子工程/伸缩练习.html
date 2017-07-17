@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		window.onload=function(){
+		var oP=document.getElementsByTagName('p')[0];
+		var oSpan=document.getElementsByTagName('span')[0];
+		var oA=document.getElementsByTagName('a')[0];
+		var str=oSpan.innerHTML;
+		var offon=true;
+		
+		oA.onclick=function(){	
+			if(offon){
+			//alert(str.substring(0,18));
+			oSpan.innerHTML=str.substring(0,18);
+			oA.innerHTML='>>展开';
+		}else{
+		 oSpan.innerHTML=str.substring(0);
+		 oA.innerHTML='>>收缩';
+	}
+		offon=!offon;	
+	};
+};
+		</script>
+	</head>
+	<body>
+		<p><span>深圳市有棵树旗下的深圳海豚跨境科技有限公司，<br />
+			号称是中国进口母婴用品最大的供应链平台，<br />
+			为国内众多的电商提供货源。<br />
+			在公司的网上商城里记者看到了来自日本的核污染地区禁止销售的卡乐比麦片。</span>
+			.....<a href="javascript:;">>>收缩</a></p>
+	</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击查看图片</title>
+    <style>
+    body{
+        font-family: Verdana,sans-serif;
+        margin: 0;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    .container .item{
+        padding: 0 8px;
+    }
+
+    .item{
+        width: 25%;
+        float: left;
+    }
+    .container:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*放大部分*/
+    .modal{
+        display:none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background:#000;
+
+    }
+
+    .modal-tontent{
+        position: relative;
+        background: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 80%;
+        max-width: 950px;
+    }
+
+    .close{
+        color: #fff;
+        position: absolute;
+        top:10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,.close:focus{
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .mySlides{
+        display: none;
+    }
+    .mySlides img{
+         height: 600px;
+    }
+    .cursor{
+        cursor: pointer;
+    }
+
+    #prev,#next{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color:#ccc;
+        font-size: 24px;
+        font-weight: bold;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-select:none; 
+    }
+    #next{
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    #prev:hover,
+    #next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    }
+    .numbertext {
+        font-size: 18px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    img{
+        margin-bottom: -4px;
+    }
+    .caption-container{
+        text-align: center;
+        background: #000;
+        padding: 2px 16px;
+        color: #fff;
+    }
+    .demo{
+        opacity: 0.6;
+    }
+
+    .active,.demo:hover{
+        opacity: 1;
+    }
+
+    img.shadow{
+        transition: 0.3s;
+    }
+    .shadow:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Popular</h2>
+    <div class="container">
+        <div class="item">
+            <img src="img/11.png" style="width:100%" class="shadow cursor">
+        </div>
+         <div class="item">
+            <img src="img/12.jpg" style="width:100%" class="shadow cursor">
+        </div>
+         <div class="item">
+            <img src="img/13.png" style="width:100%" class="shadow cursor">
+        </div>
+         <div class="item">
+            <img src="img/14.png" style="width:100%" class="shadow cursor">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" id="close">&times;</span>
+        <div class="modal-tontent">
+
+            <div class="mySlides">
+                <div class="numbertext">1/4</div>
+                <img src="img/11.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2/4</div>
+                <img src="img/12.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3/4</div>
+                <img src="img/13.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4/4</div>
+                <img src="img/14.png" style="width:100%">
+            </div>
+
+            <a id="prev">&#10094;</a>
+            <a id="next">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="item">
+                <img src="img/11.png" style="width:100%" class="demo cursor" alt="第一张图片">
+            </div>
+            <div class="item">
+                <img src="img/12.jpg" style="width:100%" class="demo cursor" alt="第二张图片">
+            </div>
+            <div class="item">
+                <img src="img/13.png" style="width:100%" class="demo cursor" alt="第三张图片">
+            </div>
+            <div class="item">
+                <img src="img/14.png" style="width:100%" class="demo cursor" alt="第四张图片">
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload=function(){
+            
+            var slides=document.getElementsByClassName("mySlides");
+            var dots=document.getElementsByClassName("demo");
+            var captionText=document.getElementById("caption");
+            var shadow=document.getElementsByClassName("shadow");
+            
+
+            var  slideIndex=1;
+            showSlides(slideIndex);
+
+            function openModal() {
+            document.getElementById('myModal').style.display = "block";
+}
+            function plusSlides(n){
+                showSlides(slideIndex+=n);
+            }
+
+            function currentSlide(n){
+                showSlides(slideIndex=n+1);
+            }
+
+            function showSlides(n){
+                var i;
+                if(n>slides.length){slideIndex=1}
+                if(n<1){slideIndex=slides.length}
+
+                for(i=0;i<slides.length;i++){
+                    slides[i].style.display="none";
+                }
+                for(i=0;i<dots.length;i++){
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex-1].style.display="block";
+                dots[slideIndex-1].className += " active";  //active前面要有空格，不然类名加不上
+                captionText.innerHTML=dots[slideIndex-1].alt;
+            }
+
+            var prev=document.getElementById("prev");
+            var next=document.getElementById("next");
+            prev.onclick=function(){
+            plusSlides(-1);
+         }
+            next.onclick=function(){
+            plusSlides(1);
+         }
+            for (var i = 0; i < dots.length; i++) {
+                        // 这里使用的是立即执行函数，
+                        (function(i) {
+                            dots[i].onclick = function() {
+                                currentSlide(i);
+                            }
+                    })(i)
+                }
+             for (i = 0; i < shadow.length; i++) {
+                        // 这里使用的是立即执行函数，
+                        (function(i) {
+                            shadow[i].onclick = function() {
+                                currentSlide(i);
+                            }
+                            shadow[i].addEventListener('click',openModal,false)
+
+                    })(i)
+                }
+
+            var close=document.getElementById("close");
+            var modal=document.getElementById("myModal");
+            close.onclick=function(){
+                modal.style.display="none";
+             };
+
+
+        };
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>露露的简历</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jquery.fullPage.css">
+    <script src="jquery/1.8.3/jquery.min.js"></script>
+    <!--<script src="jquery.fullPage.min.js"></script>-->
+    <script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            anchors: ['page1', 'page2', 'page3', 'page4'],
+            menu: '#menu'
+        });
+    });
+</script>
+</style>
+</head>
+<body>
+    <ul id="menu">
+        <li data-menuanchor="page1" class=""><a href="#page1">关于我</a></li>
+        <li data-menuanchor="page2" class=""><a href="#page2">作品</a></li>
+        <li data-menuanchor="page3" class=""><a href="#page3">技能</a></li>
+        <li data-menuanchor="page4" class="active"><a href="#page4">联系我</a></li>
+    </ul>
+    <div id="fullpage">
+        <section id="main"  class="summary section fp-section fp-table" data-anchor="page1">
+            <div  class="wrap">
+                 <span style="width:36%;height:100vh;background:#222;display:inline-block;position:absolute;left:0;"></span>
+                 <span id="open">
+                    <img src="img/lulu1.png" alt="" id="bg-img">
+                 </span>
+                 <div id="mySidenav" class="sidenav">
+                    <a href="#" class="close" id="close">&times;</a>
+
+                    <a href="#">年龄：23</a>
+                    <a href="#">兴趣爱好：弹吉他</a>
+                    <a href="#">大学取得英语六级证书</a>
+                    <a href="#">了解java、懂sql，能做出简单增删查改的管理信息系统</a>
+                </div>
+                 <div class="container">
+                    <span  style="font-size:24px;cursor:pointer ">&#9776;more</span>
+                    <h1>赵露露</h1>
+                        <p class="title">前端工程师</p>
+                        <p>本科 信息管理与信息系统</p>
+                        <p>一腔热血的激情 . 一夜失眠的创意 . 一个像素的执着</p>
+                        <div style="margin: 24px 0;">
+                             <a href="https://github.com/zhaolulu30" target="_blank">
+                                  <img src="img/github.png" alt="">
+                             </a>
+                             <a href="http://www.cnblogs.com/feilu2016/" target="_blank">
+                                  <img src="img/blog.png" alt>
+                             </a> 
+                        </div>
+                        <a href="mailto:zhaolulu0217@gmail.com">
+                        zhaolulu0217@gmail.com
+                        </a>
+                </div>
+            </div>
+        </section>
+        <section class="works section fp-section fp-table" data-anchor="page2">
+            <h2>我的作品</h2>
+            <ul>
+                <li>
+                    <div class="images">
+                            <img src="img/demo.png" alt>
+                        <div class="overlay1">
+                            <a href="../轮子工程/index.html" target="_blank">
+                                     <div class="text text1">
+                                         <div class="textcon">
+                                            <h4 style="color: rgb(255, 255, 255);">demo页面</h4>
+                                            <p>原生JavaScript代码，日常实用小demo</p>
+                                        </div>
+                                     </div>
+                                </a>
+                        </div>
+                    </div>
+                    <h3>
+                        原生js组件
+                    </h3>
+                </li>
+                <li>
+                    <div class="images">
+                            <img src="img/03.jpg" alt="">
+                        <div class="overlay1">
+                            <a href="../musicplayer/index.html" target="_blank">
+                                     <div class="text text1">
+                                         <div class="textcon">
+                                            <h4 style="color: rgb(255, 255, 255);">FM音乐播放器</h4>
+                                            <p>使用jQuery与jsonp动态获取豆瓣的API获取音乐，完成随机生成频道与歌曲，界面仿网易云音乐。</p>
+                                        </div>
+                                     </div>
+                                </a>
+                        </div>
+                    </div>
+                    <h3>
+                        jQuery+json音乐播放器
+                    </h3>
+                </li>
+                <li>
+                    <div class="images">
+                            <img src="img/01.png" alt>
+                            <div class="overlay1">
+                                <a href="../static/网易云商城/wangyiyun.html" target="_blank">
+                                     <div class="text text1">
+                                         <div class="textcon">
+                                            <h4 style="color: rgb(255, 255, 255);">静态页面</h4>
+                                            <p>运用html、css仿网易云页面，其中运用absolute与relative相互辅助完成布局问题</p>
+                                        </div>
+                                     </div>
+                                </a>
+                        </div>
+                    </div>
+                    <h3>
+                        静态页面
+                    </h3>
+                </li>
+                <li>
+                    <div class="images">
+                          <img src="img/pc.jpg" alt="">
+                          <div class="overlay1">
+                                <a href="../移动端/index.html" target="_blank">
+                                     <div class="text text1">
+                                         <div class="textcon">
+                                            <h4 style="color: rgb(255, 255, 255);">移动端页面</h4>
+                                            <p>通过动态设置html的font-size与viewport的scale，单位全部使用rem，适配安卓、iOS、iPad</p>
+                                        </div>
+                                     </div>
+                                </a>
+                          </div>
+                    </div>
+                    <h3>
+                        移动端页面
+                    </h3>
+                </li>
+                <li>
+                    <div class="images">
+                            <img src="img/04.png" alt="">
+                        <div class="overlay1">
+                            <a href="http://v1.sznews.com/yassp0710/index" target="_blank">
+                                     <div class="text text1">
+                                         <div class="textcon">
+                                            <h4 style="color: rgb(255, 255, 255);">提交页面</h4>
+                                            <p>后端运用c#、前端使用webuploader.js插件实现上传文件功能，表单提交到后台数据</p>
+                                        </div>
+                                     </div>
+                                </a>
+                        </div>
+                    </div>
+                    <h3>
+                        前后端结合页面
+                    </h3>
+                </li>
+                <li>
+                    <div class="images">
+                            <img src="img/08.jpg" alt="">
+                        <div class="overlay1">
+                            <a href="../后台管理网站/index.html" target="_blank">
+                                     <div class="text text1">
+                                         <div class="textcon">
+                                            <h4 style="color: rgb(255, 255, 255);">后台系统页面</h4>
+                                            <p>使用bootsrapt框架，兼容不同大小电脑分辨率，其中使用chart.js完成表格统计模块</p>
+                                        </div>
+                                     </div>
+                                </a>
+                        </div>
+                    </div>
+                    <h3>
+                        后台管理界面
+                    </h3>
+                </li>
+            </ul>
+        </section>
+        <section class="skills section fp-section fp-table" data-anchor="page3">
+            <h2>我的技能</h2>
+            <nav>
+                <ol>
+                    <li class="act active" onclick="openCon(event,'one')">
+                        <div class="imageswrap">
+                            <img src="img/skill1.png" alt="">
+                            <h3>静态页面</h3>
+                        </div>
+                    </li>
+                    <li  class="act" onclick="openCon(event,'two')">
+                        <div class="imageswrap">
+                            <img src="img/skill2.png" alt="">
+                            <h3>动态页面</h3>
+                        </div>
+                    </li>
+                    <li class="act" onclick="openCon(event,'thre')">
+                        <div class="imageswrap">
+                            <img src="img/skill3.png" alt="">
+                            <h3>移动端页面</h3>
+                        </div>
+                    </li>
+                    <li class="act" onclick="openCon(event,'four')">
+                        <div class="imageswrap">
+                            <img src="img/skill4.png" alt="">
+                            <h3>前框框架</h3>
+                        </div>
+                    </li>
+                </ol>
+                <ol>
+                    <li id="one" class="tabcontent" style="display:flex">
+                        <div class="con">
+                            <h3>
+                               <p>像素级页面制作能力</p>
+                               <p>了解PhotoShop的使用，熟练掌握切图技能</p>
+                               <p>熟悉W3C规范，使用HTML,CSS和jQuery100%还原设计稿</p>
+                            </h3>
+                        </div>
+                    </li>
+                    <li id="two" class="tabcontent">
+                        <div class="con">
+                            <h3>
+                               熟悉HTTP、AJAX、JSONP等技术，了解前后端分离开发模式
+                            </h3>
+                        </div>
+                    </li>
+                    <li id="thre"  class="tabcontent">
+                        <div class="con"> 
+                            <h3>
+                                熟悉CSS3、响应式页面等
+                            </h3>
+                        </div>
+                    </li>
+                    <li id="four" class="tabcontent">
+                        <div class="con">
+                            <h3>
+                                了解Vue.js、React基本原理，能使前端框架开发富交互运用
+                            </h3>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </section>
+        <section class="contacts section fp-section fp-table" data-anchor="page4">
+            <div class="wrap">
+                <h2>联系我</h2>
+                <dl>
+                    <dt class="email"></dt>
+                    <dd>
+                        <a href="mailto:zhaolulu0217@gmail.com">
+                        zhaolulu0217@gmail.com
+                        </a>
+                    </dd>
+                    <dt class="wc"></dt>
+                    <dd>zhaolulu1994-02</dd> 
+                    <dt class="iphone"></dt>
+                    <dd>18785356834</dd>
+                </dl>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript"  src="index.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+  <!--<script src="http://hm.baidu.com/h.js?988268596e7a833ffbfb2e9f82d93e18"></script>-->
+  <!--<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a>-->
+</body>
+</html>

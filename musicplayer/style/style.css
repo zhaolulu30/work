@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 376px;
+    height: 600px;
+    font-family:Arial;
+    margin: 50px auto;
+    position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 6px 7px #999;
+}
+.header{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+}
+.background{
+    position: absolute;
+    top:50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 0 50%;
+    z-index: -1;
+    -webkit-filter:blur(10px);
+}
+
+.bg-black{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.4;
+}
+#container .musicname,.musicer{
+    width: 100%;
+    left: 40%;
+    margin: 8px;
+}
+.musicname{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    color: yellow;
+    top: 2px;
+
+
+}
+.musicer{
+    font-size: 13px;
+    color: #fff;
+    top:30px;
+
+}
+.music-massage{
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    bottom:214px;
+    overflow: hidden;
+    text-align: center;
+}
+.record{
+	font-size: 14px;
+	color:#fff;
+	margin-top: 4px;
+}
+.music-lyric{
+   position: absolute;
+   top:60px;
+   height: 390px;
+   overflow: hidden;
+   width: 100%;
+	/*background-color: rgba(100, 100, 100, 0.5)*/
+}
+.music-lyric ul{
+    overflow: hidden;
+	position: relative;
+	transition: all 1s;
+    
+}
+
+.lyric li{
+	padding: 5px 0 2px 0;
+	position: relative;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 12px ;
+	transition: all 1s;
+}
+.lyric li.active {
+  font-size: 13px;
+  color: #ffffff;
+}
+.rotate{
+   animation: rot 10s linear infinite; /* 自定义动画：动画名称 时间 匀速 无限重复*/
+}
+/*设置动画每一帧*/
+@keyframes rot{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+
+}
+
+.active{
+    color: red;
+    font-size: 16px;
+}
+.foot{
+    position: absolute;
+    height: 120px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+#control{
+    margin: 0 auto;
+    padding-left: 34px;
+    width: 350px;
+    height: 100px;
+    z-index: 100;
+}
+
+#control span{
+    margin-right: 15px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.play{
+    background: url(../images/play_rdi_btn_play.png);
+    width: 70px;
+    height: 70px;
+}
+.pause{
+    background: url(../images/play_rdi_btn_pause.png);
+    width: 70px;
+    height: 70px;
+}
+.loop{
+    background: url(../images/loop.png);
+    width: 36px;
+    height: 36px;
+}
+.solo{
+    background: url(../images/solo.png);
+    width: 36px;
+    height: 36px;
+}
+
+.pre{
+    background: url(../images/play_btn_prev.png);
+    width: 50px;
+    height: 50px;
+}
+.next{
+    background: url(../images/play_btn_next.png);
+    width: 50px;
+    height: 50px;
+}
+
+.fm{
+    background: url(../images/FM.png);
+    width: 36px;
+    height: 36px;
+}
+
+.like-info{
+     position: absolute;
+     height: 40px;
+     width: 100%;
+     bottom: 120px;
+     left: 0;
+    overflow: hidden;
+}
+.like-info span,a{
+    margin-right: 50px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.control-like{
+    margin: 0 auto;
+    padding-left: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.unlike{
+    background: url(../images/xihuan.png);
+    width: 28px;
+    height: 28px;
+}
+.like{
+    background: url(../images/xihuan-1.png);
+    width: 28px;
+    height: 28px;
+}
+.download{
+    background: url(../images/down.png);
+    width: 28px;
+    height: 28px;
+}
+.pinglun{
+    background: url(../images/pinglun.png);
+    width: 28px;
+    height: 28px;
+
+}
+.share{
+    background: url(../images/share.png);
+    width: 28px;
+    height: 28px;
+    
+}
+.center{
+    position: absolute;
+    top:10%;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+}
+#styli{
+    position: absolute;
+    top:-20px;
+    left:48%;
+    width: 85px;
+    z-index: 20;
+    transition: transform 0.5s;
+    transform-origin: 16px 16px;
+    -webkit-transform-origin: 16px 16px;
+
+}
+.play-needle{
+    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+}
+.disk-bg{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left:50%;
+    top:52px;
+    margin: 0 -125px;
+    background: rgba(251, 251, 251, 0.2);
+    border-radius: 50%;
+    
+}
+.disk{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top:2px;
+    margin: 0 -126px;
+    border-radius: 126px;
+}
+.disk-music-bg{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top:50px;
+    margin: 0 -123px;
+    border-radius: 50%;
+}
+
+#disk-album-bg{
+    width: 240px;
+    height: 240px;
+    border-radius:50%;
+    left:7px;
+    top: 54px;
+    position: absolute;
+}
+#process{
+    margin: 0 auto;
+    text-align: center;
+    line-height: 20px;
+}
+
+#process span{
+    display: inline-block;
+}
+
+#currentTime{
+    margin-right: 10px;
+    font-size: 12px;
+}
+#total-time{
+    font-size: 12px;
+}
+#process-bar{
+    position: relative;
+    display: inline-block;
+    width: 240px;
+    height: 20px;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+#process-bar div{
+    margin-top: 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    cursor: pointer;
+}
+
+#process-all{
+    width: 100%;
+    background-color: #615D5c;
+}
+
+#process-cur{
+    background: #F23C3C;
+}
+#cur-btn{
+    cursor: pointer;
+    position: absolute;
+    margin-left: -10px;
+    top:-9px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/process_btn.png) no-repeat;
+    background-size: 20px;
+}

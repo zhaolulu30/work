@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+body{
+    margin: 0;
+    min-width: 250px;
+}
+*{box-sizing: border-box;}
+
+.header{
+    background: palegoldenrod;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+.header::after{
+    content: '';
+    display:table;
+    clear: both;
+}
+
+input{
+    border: none ;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    outline: none;
+
+}
+
+.addBtn{
+    padding: 8px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #333;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.addBtn:hover{
+    background: #bbb;
+
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    user-select: none;
+}
+
+ul li:nth-child(odd){
+    background: #f9f9f9;
+
+}
+
+ul li:hover{
+    background: #ddd;
+}
+
+ul li.checked{
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left:16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+.close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+.close:hover{
+    background:#f44336;
+    color: #fff;
+}
+</style>
+<script>
+    window.onload=function(){
+        var aLi=document.getElementsByTagName("li");
+        addClose();
+
+
+        function addClose(){
+            var i;
+        // 给每个li加上close类名
+            for(i=0;i<aLi.length;i++){
+                var span=document.createElement("span");
+                var txt=document.createTextNode("\u00D7");
+                span.className="close";
+                span.appendChild(txt);
+                aLi[i].appendChild(span);
+            }
+
+            //点击close按钮的时候把li隐藏
+            var close=document.getElementsByClassName("close");
+            var i;
+            for(i=0;i<close.length;i++){
+                close[i].onclick=function(){
+                    var div=this.parentElement;
+                    div.style.display="none";
+                };
+            }
+
+        }
+        
+
+        // 点击添加按钮的时候把内容添加到列表中
+        var add=document.getElementsByClassName("addBtn")[0];
+        var input=document.getElementById("myInput");
+        add.onclick=function(){
+            var li=document.createElement("li");
+            var liTxt=input.value;
+            var t=document.createTextNode(liTxt); //创建文本节点
+            // liTxt不能直接添加到li中
+            li.appendChild(t);
+            if(liTxt===""){
+                alert("还没写任务呢")
+            }else{
+                document.getElementById("myUl").appendChild(li);//将内容添加到列表中
+            }
+            //并把输入框的内容清空；
+            input.value="";
+            addClose();
+        };
+
+        //  切换选中与未选中按钮
+        var list=document.querySelector("ul");
+        list.onclick=function(ev){
+            var ev=ev||event;
+            if(ev.target.tagName === 'LI'){
+                  ev.target.classList.toggle('checked');
+            }
+
+        }
+    };
+</script>
+</head>
+<body>
+<div id="container" class="header">
+    <h2 style="margin:5px">我要完成的任务</h2>
+    <input type="text" id="myInput" placeholder="请输入任务名">
+    <span class="addBtn">添加</span>
+</div>
+
+<ul id="myUl">
+    <li>学习任务1</li>
+    <li class="checked">弹吉他</li>
+    <li>看书</li>
+    <li>去健身</li>
+    <li>买菜</li>
+    <li>做饭</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+body,html{
+    height: 100%;
+    margin: 0;
+}
+
+.bg{
+    background: url(img/8.jpg) no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    font-family: Courier New, Courier, monospace;
+    font-size: 25px;
+ }
+
+ .middle{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+ }
+
+ hr{
+     margin: auto;
+     width: 40%;
+ }
+</style>
+
+<script>
+    window.onload=function(){
+        // 设置截止日期
+        var deadline=new Date("Sep 9 19:09:09 2019").getTime();
+        // alert(deadline);
+        var countdown=setInterval(function(){
+            var now=new Date().getTime();// 获取现在时间
+            var distance=deadline-now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+            document.getElementById("time").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+            if(seconds<10){
+                seconds="0"+seconds;
+            }
+
+            document.getElementById("time").innerHTML= days+"天"+hours+"小时"+minutes+"分"+seconds+"秒";
+
+            if(distance<0){
+                clearInterval(countdown);
+                document.getElementById("time").innerHTML="时间到了";
+            }
+
+
+        },1000);
+
+    };
+</script>
+</head>
+<body>
+    <div class="bg">
+        <div class="middle" >
+            <h1>COMING SOON</h1>
+            <hr>
+            <p id="time" style="font-size:30px"></p>
+        </div>
+    </div>
+</body>
+</html>

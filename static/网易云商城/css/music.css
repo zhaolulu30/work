@@ -1,0 +1,71 @@
+/*top*/
+.m_top{position: relative;z-index: 1000;height: 70px;background: url(../img/music/topbar.png) repeat-x 0 -80px;}
+.m_wrap{width: 1100px;margin: 0 auto;}
+.m_top .logo{background: url(../img/music/topbar.png) no-repeat 0 15px;width: 158px;height: 34px;text-indent: -9999px;padding: 22px 20px 0 0 ;float: left;}
+.m_top .login{float: right;font-size: 14px;color:#adadad;padding-top: 30px;cursor: pointer;}
+#m_nav{width: 100%;height: 6px;background:url(../img/music/show.png) repeat-x;position:relative;}
+
+/*content*/
+#m_content{width: 100%;text-align: center;background: #fff;font-size: 16px;color:#b42325 ;line-height: 1.6;position: relative;}
+#m_content .details{background: url(../img/music/recruit_header.jpg) no-repeat center top;height: 820px;}
+h2,h3{text-indent: -9999px;height: 0;}
+.more{color: #b42825;position: absolute;top: 484px;left: 602px;}
+.m_center{width: 540px;margin: 580px auto 0;text-align: center;line-height: 1.6;}
+.word p{color: #7f2321;line-height: 30px;font-size: 16px;}
+.word{margin-bottom: 50px;}
+.apply{display: block;width: 270px;height: 60px;background: #f25b56;margin: 0 auto;color: #fff;border-radius: 2px;font-family: "微软雅黑";line-height: 60px;}
+.m_center a:hover{text-decoration: none;}
+
+.article {width: 1041px;margin: 80px auto 0px;background: url(../img/music/recruit_footer.jpg) no-repeat center bottom;padding-bottom: 194px;}
+.article p{text-align: center;font-size: 24px;}
+.clear:after{clear: both;content: '.';display: block;height: 0;visibility: hidden;}
+.article p:after{display: block;margin: 12px auto 0;width: 100px;height: 2px;content: '';background: #E33232;}
+.article ul{width: 100% ;height: auto;margin-top: 70px;}
+img{border: none;}
+.article li{float: left;height:260px;width: 286px; margin: 0 30px;}
+.article .wz{width: 256px;height: 48px;padding: 12px 15px 11px;font-size: 18px;background: #f5f5f5;text-align: left;line-height: 24px;margin-top: -6px;}
+
+
+
+/*footer*/
+.footer{width: 100%;height: 120px;background: #f2f2f2;}
+.footer #footer_main{width: 1102px;margin: 0 auto;}
+#copyright{width: 490px;float: left;margin-top: 30px;line-height: 28px;}
+#copyright .f_line{margin: 0 10px;color: #c2c2c2;}
+.wangyi{color: #999;}
+.site{color: #666;}
+#extend{width:330px;margin-top: 30px;float: right;}
+#extend .logo{float: left; color: #acacac;width: 60px;height: 70px;margin-left: 30px;text-align: center;position: relative;font-size: 12px;}
+#extend .first{margin-left: 0;}
+.logo span{display: block;margin-top:0px;}
+.logo i{display: inline-block;width: 44px;height: 44px;}
+.logo .music{background: url(../img/music.png) no-repeat;}
+.logo .column{background: url(../img/column.png) no-repeat;}
+.logo .media{background: url(../img/media.png) no-repeat;}
+.logo .money{background: url(../img/money.png) no-repeat;}
+
+
+/*login*/
+.loginKuang{position: absolute;z-index: 9999;width: 530px;border-radius: 4px;box-shadow: 0 5px 16px rgba(0,0,0,0.8);border: none;display: none;}
+.loginbar{position: relative;z-index: 10;border-bottom: 1px solid #191919;border-radius: 4px 4px 0 0;background: #2d2d2d;}
+.loginbar .logintitle{color: #fff;font-size: 14px;line-height: 38px;height: 38px;padding-left: 18px;background-position: 50% 0;}
+
+.logincontent{padding: 0;border: 1px solid #878787;border-width: 0 1px 1px;border-radius: 0 0 4px 4px;background: #fff;}
+.logincontent_main{padding: 40px 0 40px;}
+.logincontent_main .left_main{float: left;width: 224px;padding :0 34px 2px 40px;border-right: 1px dotted #ccc;}
+.screen{background:url(../img/music/platform.png) no-repeat 13px 0;height: 120px;}
+.shouji,.register{margin-top: 10px;}
+.mobile{width: 220px;background: #2979c7;height: 30px;display: inline-block;border-radius: 4px;}
+.mobile i{display: inline-block;width: 184px;color: #fff;height: 30px;margin:0 18px;line-height: 30px;text-align: center;font-style: normal;}
+.re{width: 220px;background: #f1f1f1;height: 30px;display: inline-block;border-radius: 4px;border: 1px solid #c3c3c3;}
+.re i{display: inline-block;width: 184px;color: #333;height: 30px;margin:0 18px;line-height: 30px;text-align: center;font-style: normal;}
+.right_main{width: 188px;height: 222px;padding: 3px 0 3px 26px;float: left;}
+.right_main li{margin-top: 14px;}
+.right_main li a{font-size: 12px;color: #333;line-height: 38px;}
+.right_main .bg{margin-right: 14px;width: 38px;height: 38px;display: inline-block;vertical-align: middle;}
+.bg_wexin{background: url(../img/music/wexin.png) no-repeat;}
+.bg_qq{background: url(../img/music/QQ.png) no-repeat;}
+.bg_weibo{background: url(../img/music/weibo.png) no-repeat;}
+.bg_wangyi{background: url(../img/music/wangyi.png) no-repeat;}
+
+#close{position: absolute;width: 10px;height: 10px;cursor: pointer;top: 10px;right: 20px;font-size: 20px;color: #fff;display: inline-block;z-index: 1000;}

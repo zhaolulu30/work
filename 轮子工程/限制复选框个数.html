@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script>
+   window.onload=function(){
+       var count=0;
+       function doCheck(obj,limit){
+           obj.checked?count++:count--;
+           if(count>limit){
+               obj.checked=false;
+               alert("最多允许"+limit+"个");
+               count--;
+           }
+       }
+
+       var checkbox=document.getElementsByName("age");
+       for (var i = 0; i < checkbox.length; i++) {
+                        // 这里使用的是立即执行函数，
+                        (function(i) {
+                            checkbox[i].onclick = function() {
+                                doCheck(this,3);
+                            }
+                        })(i)
+                    }
+
+   };
+   </script>
+</head>
+<body>
+   <input type="checkbox" name="age" >12
+   <input type="checkbox" name="age" >20
+   <input type="checkbox" name="age" >40
+   <input type="checkbox" name="age" >70
+   <input type="checkbox" name="age" >80
+   <input type="checkbox" name="age" >90
+   
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function(){
+				var oText=document.getElementById('text1');
+				var oBtn=document.getElementById('btn');
+				var oUl=document.getElementById('list');
+				
+				oBtn.onclick=function(){
+					var oLi=document.createElement('li');
+					oLi.innerHTML=oText.value;
+					oText.value='';
+					
+					if(oUl.children[0]){
+						oUl.insertBefore(oLi,oUl.children[0]);
+						
+					}else{
+						oUl.appendChild(oLi);
+					}
+					
+					var oA=document.createElement('a');
+					oA.innerHTML="删除";
+					oA.href="script:;";
+					oA.onclick=function(){
+						oUl.removeChild(this.parentNode);
+					};
+					oLi.appendChild(oA);
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<input type="text" id="text1" />
+		<input type="button" value="留言" id="btn" />
+		<ul id="list"></ul>
+	</body>
+</html>

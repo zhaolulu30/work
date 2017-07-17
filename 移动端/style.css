@@ -1,0 +1,570 @@
+*{margin: 0;padding: 0}
+html{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    height: 100%;
+    overflow: auto;
+}
+ul{
+    list-style: none;
+}
+img{
+    border: none;
+    vertical-align: top;
+}
+/*header*/
+#head{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1.39rem;
+    background-color:#009ff0; 
+    z-index: 1;
+}
+
+#head .scan{
+    float: left;
+    width: 1.64rem;
+    height: 1.39rem;
+    background: url(img/scan.png) no-repeat 0.39rem 0.23rem;
+    background-size:   0.73rem 0.90rem;
+}
+
+.form{
+    margin-top: 0.22rem;
+    float: left;
+    position: relative;
+}
+
+.h-search{
+    float: left;
+    border: none;
+    width:6.72rem;
+    height: 0.96rem;
+    background: #a0dbf9;
+    border-radius: 0.064rem; 
+}
+.form span{
+    font: 0.39rem/0.59rem" 微软雅黑";
+    position: absolute;
+    padding-left: 0.96rem;
+    left: 0.28rem;
+    top: 0.20rem;
+    background: url(img/sousuo.png) no-repeat 0 0 ;
+    background-size: 0.54rem 0.55rem;
+}
+
+.message{
+    position: absolute;
+    width: 1.64rem;
+    height: 1.39rem;
+    background: url(img/message.png) no-repeat 0.61rem;
+    background-size: 0.56rem 0.93rem;
+}
+
+
+/*content*/
+section.content{
+    margin-bottom: 1.39rem;
+    overflow: hidden;
+}
+.c-banner{position: relative;}
+a{
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+
+}
+.tab{
+    /*position: relative;*/
+    display: block;
+    top: 1.36rem;
+    margin-top:1.38rem;
+}
+
+.tab img{
+    width: 9.98rem;
+    height: 2.39rem;
+    border: none;
+}
+.clear::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+
+.c-banner nav{
+    position: absolute;
+    width: 1.37rem;
+    height: 0.20rem;
+    right: 0.20rem;
+    bottom: 0.20rem;
+}
+.c-banner nav a{
+    float: left;
+    margin-right: 0.074rem;
+    width: 0.19rem;
+    height: 0.19rem;
+    background: transparent;
+    border: 0.025rem solid #fff;
+    border-radius: 0.14rem;
+    box-sizing: border-box;
+}
+.c-banner .color{
+    background: #fff;
+    opacity: 1;
+}
+
+.c-sort{
+    margin-bottom: 0.36rem;
+}
+
+
+.c-sort a{
+    float: left;
+}
+
+.c-sort img{
+    width: 2.50rem;
+    height: 2.20rem;
+}
+
+.c-sort2{
+    /*position: relative;*/
+    border-top: 0.0093rem solid #e0e0e0;
+    margin-top: -0.6rem;
+    margin-right: -0.019rem;
+}
+.c-sort2 a{
+    float: left;
+    box-sizing: border-box;
+    border-right: 0.0093rem solid #e0e0e0;
+    border-bottom: 0.015rem solid #e0e0e0;
+    height: 1.09rem;
+}
+
+.c-sort2 img{
+    float: left;
+    width: 3.31rem;
+}
+
+.c-headline{
+    margin: 0.16rem 0;
+}
+
+.c-headline h3{
+    float: left;
+    border-right: 0.009rem solid #dededf;
+}
+
+.c-headline h3 a{
+    float: left;
+    width: 2.22rem;
+    height: 1.39rem;
+    background: url(img/headline.png) no-repeat 0.5rem 0.14rem;
+    background-size: 1.24rem 1.12rem;
+}
+
+.headline-con{
+    float: left;
+    padding: 0.058rem 0 0.074rem 0.28rem;
+}
+
+.headline-con a{
+    display: block;
+    font: 0.35rem/0.63rem "宋体";
+    color: #6c6e6f;
+}
+
+.headline-con span{
+    color: #ff5b45;
+}
+
+.hr{
+    width: 100%;
+    height: 0.17rem;
+    background: #f2f3f4;
+    border-top: 0.009rem solid #e0e0e0;
+}
+
+.c-bargains{
+    padding: 0.17rem 0 0.17rem 0.18rem;
+}
+
+.c-bargains .traver{
+    float: left;
+    width: 4.33rem;
+    height: 3.13rem;
+    background: #f7f7f7 url(img/bargains1.png) no-repeat 1.37rem 1.33rem;
+    margin-right: 0.17rem;
+}
+.pr{
+    position: relative;
+}
+.traver .icon{
+    width: 1.56rem;
+    height: 0.44rem;
+    background: url(img/bargains.png) no-repeat 0 0;
+    background-size: 1.56rem 0.44rem;
+    left: 0.25rem;
+    top: 0.22rem;
+}
+.pa{
+    position: absolute;
+}
+
+.ct-text{
+    font: 0.31rem/0.31rem "宋体";
+    color: #333;
+    left: 0.25rem;
+    top: 0.99rem;
+}
+
+.ct-money{
+    font: 0.2rem "宋体";
+    color: #ff5000;
+    left: 0.26rem;
+    top: 1.71rem;
+}
+.ct-money em{
+    font: 0.26rem/0.26rem "宋体";
+}
+
+.c-bargains .air-ticket{
+    float: left;
+    width: 2.5rem;
+    height: 3.12rem;
+    background: #f7f7f7 url(img/air-ticket.png) no-repeat 0 1.93rem;
+    background-size: 2.5rem 1.2rem;
+    margin-right: 0.17rem;
+}
+.air-ticket .icon{
+    width: 1.56rem;
+    height: 0.44rem;
+    background: url(img/air-ticket0.png) no-repeat 0 0;
+    background-size: 1.56rem 0.44rem;
+    left: 0.25rem;
+    top: 0.22rem;
+}
+
+.c-bargains .grogshop{
+    float: left;
+    width: 2.5rem;
+    height: 3.12rem;
+    background: #f7f7f7 url(img/grogshop.png) no-repeat 0 1.93rem;
+    background-size: 2.5rem 1.2rem;
+
+}
+.grogshop .icon{
+    width: 1.56rem;
+    height: 0.44rem;
+    background: url(img/grogshop0.png) no-repeat 0 0;
+    background-size: 1.56rem 0.44rem;
+    left: 0.25rem;
+    top: 0.22rem;
+}
+
+.live{
+    width: 100%;
+}
+
+.live-title{
+    width: 100%;
+    height: 1.11rem;
+}
+
+.live-title .title{
+    font: 0.39rem/0.42rem "宋体";
+    background: url(img/direct-seeding.png) no-repeat 0 0;
+    background-size: 0.42rem 0.42rem;
+    padding-left: 0.64rem;
+    width: 2.50rem;
+    left: 3.44rem;
+    top: 0.34rem;
+}
+
+.live-box{
+    padding: 0.23rem 0 0 0.30rem;
+    height: 4.42rem;
+}
+
+.live-box img{
+    width: 4.58rem;
+    height: 2.99rem;
+}
+.box-left{
+    float: left;
+    width: 4.58rem;
+    margin-right: 0.28rem;
+}
+
+.box .text1{
+    display: block;
+    width: 100%;
+    height: 0.43rem;
+    font: 0.39rem/0.39rem "微软雅黑";
+    color: #333;
+    background: url(img/ds-box1.png) no-repeat 2.62rem 0;
+    background-size: 1.11rem 0.43rem;
+}
+
+.box .text2{
+    display: block;
+    width: 100%;
+    height: 0.31rem;
+    font: 0.31rem/0.31rem "微软雅黑";
+    color: #afafaf;
+    margin-top: 0.14rem;
+    margin-bottom: 0.26rem;
+}
+
+.box-right{
+    float: left;
+    width: 4.58rem;
+}
+
+
+.travel-around{
+    width: 100%;
+}
+
+.ta-title{
+    width: 100%;
+    height: 1.11rem;
+    text-align: center;
+    font: 0.39rem/1.11rem "宋体";
+}
+.ta-title .title{
+    background: url(img/ambitus.png) no-repeat 0 0 ;
+    background-size: 0.38rem 0.42rem;
+    padding-left: 0.61rem;
+    color: #9587e6;
+}
+.db{
+    display: block;
+}
+
+.ta-img img{
+    width: 10rem;
+    height: 4rem;
+
+}
+
+.ta-text{
+    display: block;
+    color: #333;
+    font: 0.39rem/0.48rem "宋体";
+    padding-left: 0.36rem;
+    margin: 0.37rem 0 0.56rem 0;
+
+}
+
+.ta-bottom{
+    margin-bottom: 0.51rem;
+}
+.ta-bottom .bg{
+    background: url(img/wanzhuan.png) no-repeat 0.33rem 0;
+    background-size: 0.33rem 0.33rem;
+}
+.ta-bottom .left{
+    float: left;
+    width: 1.94rem;
+    height: 0.33rem;
+    font: 0.311rem/0.311rem "微软雅黑";
+    padding-left: 0.70rem;
+    color: #a7a7a7;
+}
+.ta-bottom .prevview,.tab-box .prevview{
+    float: left;
+    height: 0.33rem;
+    font: 0.28rem/0.28rem "微软雅黑";
+    padding-left: 0.42rem;
+    color: #a7a7a7;
+    background: url(img/yan.png) no-repeat 0 0;
+    background-size: 0.36rem 0.32rem;
+    margin-right: 0.24rem;
+}
+.ta-bottom .right,.tab-box .right{
+    float: right;
+    padding-right: 0.33rem;
+    height: 0.33rem;
+}
+
+.ta-bottom .zan ,.tab-box .zan{
+    float: left;
+    height: 0.33rem;
+    font: 0.28rem/0.28rem "微软雅黑";
+    padding-left: 0.42rem;
+    color: #a7a7a7;
+    background: url(img/shou.png) no-repeat 0 0;
+    background-size: 0.36rem 0.32rem;
+}
+
+.ta-bottom2{
+    border-bottom: 0.009rem solid #dededf;
+}
+.ta-bottom2 .border{
+    margin-right: 0.09rem;
+}
+.ta-bottom2 li{
+    float: left;
+    width: 4.95rem;
+    height: 5.64rem;
+}
+
+.tab-img img{
+    width: 4.95rem;
+    height: 3.29rem;
+}
+
+
+.tab-text{
+    display: block;
+    color: #333;
+    height: 0.85rem;
+    font: 0.33rem/0.42rem "宋体";
+    padding-left: 0.26rem;
+    margin-top: 0.32rem;
+    margin-bottom: 0.42rem;
+}
+.tab-box{
+    display: block;
+    padding-left: 0.26rem;
+    margin-bottom: 0.42rem;
+}
+
+.tab-box .text{
+    float: left;
+    width: 1.94rem;
+    height: 0.31rem;
+    font: 0.31rem/0.31rem "微软雅黑";
+    color: #a7a7a7;
+}
+
+.ca-n{
+    font: 0.33rem/1.09rem "微软雅黑";
+    text-align: center;
+    color: #666;
+}
+.ca-n span{
+    color: #009ff0;
+}
+.ch2-title{
+    width: 100%;
+    height: 1.11rem;
+    text-align: center;
+    font:0.39rem/1.11rem "宋体";
+}
+.ch2-title .title{
+    background: url(img/toutiao.png) no-repeat 0 0.02rem;
+    background-size: 0.42rem 0.42rem;
+    padding-left: 0.61rem;
+    color: #ff5137;
+}
+
+.ca-img img{
+    width: 10rem;
+    height: 4rem;
+}
+
+.ch2-box{
+    border-bottom: 0.009rem solid #dededf;
+}
+.ch2-box .box-left1{
+    float: left;
+    width: 7.08rem;
+}
+
+.ca-text{
+    display: block;
+    color: #333;
+    font: 0.39rem/0.48rem "宋体";
+    padding-left: 0.36rem;
+    margin: 0.37rem 0 0.56rem 0;
+}
+.ta-bottom .bg2{
+    background: url(img/bg2.png) no-repeat 0.33rem 0;
+    background-size: 0.33rem 0.33rem;
+}
+.box-right1{
+    float: left;
+    margin-top: 0.32rem;
+}
+
+.box-right1 img{
+    width: 2.58rem;
+    height: 1.94rem;
+}
+.c-find{
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #dededf;
+}
+
+.c-find .title{
+    background: url(img/cd1.png) no-repeat 0 0;
+    background-size:0.47rem 0.47rem;
+    padding-left: 0.68rem; 
+}
+
+.cd-box{
+    width: 200%;
+    padding-left: 0.25rem;
+    border-bottom: 0.013rem solid #dededf;
+}
+.cd-img{
+    float: left;
+    width: 4.03rem;
+    margin-right: 0.17rem;
+    margin-bottom: 0.333ren;
+}
+.cd-img img{
+    width: 4.03rem;
+    height: 2.77rem;
+}
+.cd-img .text1{
+    font: bold 0.47rem/0.47rem "微软雅黑";
+    color: #fff;
+    top: 1.45rem;
+    left: 0.19rem;
+}
+.cd-img .text2{
+    font: 0.31rem/0.31rem "微软雅黑";
+    color: #fff;
+    top: 2.22rem;
+    left: 0.19rem;
+}
+
+/*foot*/
+#foot{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.39rem;
+    background: #f3f5f6;
+    border-top: 0.009rem solid #d3ded3;
+}
+#foot a{
+    float: left;
+    width: 2.50rem;
+    height: 1.39rem;
+}
+#foot .page{
+    background: url(img/foot-page.jpg) no-repeat 0 0;
+     background-size: 2.50rem 1.39rem;
+}
+#foot .discover{
+    background: url(img/foot-discover.jpg) no-repeat 0 0;
+     background-size: 2.50rem 1.39rem;
+}
+#foot .journey{
+    background: url(img/foot-journey.jpg) no-repeat 0 0;
+     background-size: 2.50rem 1.39rem;
+}
+#foot .me{
+    background: url(img/foot-me.jpg) no-repeat 0 0;
+     background-size: 2.50rem 1.39rem;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <title>分页</title>
+    <style>
+    #barcon{
+        position: absolute;
+        bottom: 5%;;
+        left: 35%;
+    }
+
+     #barcon a { 
+        color: black;
+        padding: 8px 8px 8px 20px;
+        text-decoration: none;
+        transition: background-color .3s;
+}
+
+    #barcon a.active{
+        background: #4caf50;
+        color: #fff;
+
+    }
+
+    #barcon a:hover:not(.active){
+        background: #ddd;
+    }
+    </style>
+    <script>
+        window.onload=function(){
+            goPage(1,5);
+        };
+    function goPage(pno, psize) {
+        var itable = document.getElementById("jjj");//通过ID找到表格
+        var num = itable.rows.length;//表格所有行数(所有记录数)
+        var totalPage = 0;//总页数
+        var pageSize = psize;//每页显示行数
+        //总共分几页
+        if (num / pageSize > parseInt(num / pageSize)) {
+            totalPage = parseInt(num / pageSize) + 1;
+        } else {
+            totalPage = parseInt(num / pageSize);
+        }
+        var currentPage = pno;//当前页数
+        var startRow = (currentPage - 1) * pageSize + 1;//开始显示的行  1
+        var endRow = currentPage * pageSize;//结束显示的行   15
+        endRow = (endRow > num) ? num : endRow;
+        //遍历显示数据实现分页
+        for (var i = 1; i < (num + 1); i++) {
+            var irow = itable.rows[i - 1];
+            if (i >= startRow && i <= endRow) {
+                irow.style.display = "block";
+            } else {
+                irow.style.display = "none";
+            }
+        }
+        var tempStr = "";
+        if (currentPage > 1) {
+            tempStr += "<a href=\"#\" onClick=\"goPage(" + (currentPage - 1) + "," + psize + ")\"><上一页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>"
+            for (var j = 1; j <= totalPage; j++) {
+                tempStr += "<a href=\"#\" onClick=\"goPage(" + j + "," + psize + ")\">" + j + "&nbsp;&nbsp;&nbsp;</a>"
+            }
+        } else {
+            tempStr += "<上一页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            for (var j = 1; j <= totalPage; j++) {
+                tempStr += "<a href=\"#\" onClick=\"goPage(" + j + "," + psize + ")\">" + j + "&nbsp;&nbsp;&nbsp;</a>"
+            }
+        }
+        if (currentPage < totalPage) {
+            tempStr += "<a href=\"#\" onClick=\"goPage(" + (currentPage + 1) + "," + psize + ")\">下一页>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>";
+            for (var j = 1; j <= totalPage; j++) {
+            }
+        } else {
+            tempStr += "  下一页>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            for (var j = 1; j <= totalPage; j++) {
+            }
+        }
+        document.getElementById("barcon").innerHTML = tempStr;
+    }
+    </script>
+</head>
+<body>
+    <!--<table class="table table-hover">
+        <thead>
+            <tr class="header">
+                <th style="width:30%">日期</th>
+                <th style="width:30%">小时</th>
+                <th style="width:30%">温度</th>
+            </tr>
+        </thead>
+    </table>-->
+    <!--<table class="table table-bordered" id="table_result" >
+        <thead>
+            <tr class="header">
+                <th style="width:30%">日期</th>
+                <th style="width:30%">小时</th>
+                <th style="width:30%">温度</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_result">
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>20</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>2666</td>
+            <td>666</td>
+        </tr>
+        <tr>
+            <td>2017-01-10</td>
+            <td>8880</td>
+            <td>888</td>
+        </tr>
+       <!--中间省略多行数据-->
+        <!--</tbody>
+    </table>-->
+
+     <div class="table-responsive">
+        <table class="table" id="jjj">
+            <caption>响应式表格布局</caption>
+            <thead>
+            <tr>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td></tr>
+            <tr>
+                <td>产品2</td>
+                <td>10/11/2013</td>
+                <td>发货中</td></tr>
+            <tr>
+                <td>产品3</td>
+                <td>20/10/2013</td>
+                <td>待确认</td></tr>
+            <tr>
+                <td>产品4</td>
+                <td>20/10/2013</td>
+                <td>已退货</td></tr>
+                <tr>
+                <td>产品2</td>
+                <td>10/11/2013</td>
+                <td>发货中</td></tr>
+            <tr>
+                <td>产品3</td>
+                <td>20/10/2013</td>
+                <td>待确认</td></tr>
+            <tr>
+                <td>产品4</td>
+                <td>20/10/2013</td>
+                <td>已退货</td></tr>
+            </tbody>
+        </table>
+</div>
+    <div id="barcon" name="barcon" class="pagination">
+       
+    </div>
+</body>
+</html>

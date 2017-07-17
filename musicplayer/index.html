@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="style/style.css">
+    <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <title>音乐播放器</title>
+    <script src="jQuery/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <p class="musicname" title=""></p>
+            <p class="musicer" title=""></p>
+          </div>
+        <!--背景图-->
+          <div class="background" style="filter: blur(10px);"></div>
+          <div class="bg-black"></div>
+
+          <!--歌词-->
+         <div class="music-lyric" style="display:none">
+		 		<div class="lyric-view">
+		 		    <ul class="lyric"></ul>
+		 		</div>
+          </div>
+
+          <!--中间部分-->
+          <div class="center" style="opacity:1;display:block">
+              <img src="images/play_needle.png" alt class="play-needle" id="styli">
+              <div class="disk-bg"></div>
+              <div class="disk" style="animation-play-state:paused;left:187px;">
+                   <div id="disk-album-bg"></div>
+                  <img class="disk-music-bg" src="images/play_disc.png" alt>
+              </div>
+          </div>
+
+          <!--频道-->
+        <div class="music-massage">
+				<p class="record" title="" data-id=""></p>
+		</div>
+
+        <!--收藏信息-->
+        <div class="like-info">
+            <div class="control-like">
+                <span class="like" style="display:none"></span>
+                <span class="unlike" style="display:inline-block"></span>
+                <span class="download"></span>
+                <span class="pinglun"></span>
+                <a class="share" href="http://service.weibo.com/share/share.php?title=#_loginLayer_1466697157538" target="new"></a>
+            </div>
+        </div>
+
+          <!--底部-->
+          <div class="foot">
+               <!--进度条部分-->
+                <div id="process">
+                    <!--当前时间-->
+                    <span id="currentTime"></span>
+                    <!--进度条-->
+                    <div id="process-bar">
+                        <div id="process-all"></div>
+                        <div id="process-cur" style="width:0">
+                            <span id="cur-btn" style="left:0"></span>
+                        </div>
+                        <div id="process-ready"></div>
+                    </div>
+                    <!--总时间-->
+                     <span id="total-time"></span>
+                </div>
+              <div id="control">
+                 <span class="loop" style="display:inline-block" ></span>
+                 <span class="solo" style="display:none" ></span>
+                 <span class="pre" ></span>
+                 <span  class="play" style="display:inline-block"></span>
+                 <span class="pause" style="display:none"></span>
+                 <span class="next"></span>
+                 <span class="fm"></span>
+             </div>
+          </div>
+         
+          
+   </div>
+   <audio id="music" src=""></audio>
+   <script type="text/javascript" src="play.js"></script>
+</body>
+</html>

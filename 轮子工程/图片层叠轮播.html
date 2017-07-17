@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片层叠轮播</title>
+    <style>
+    #list{
+        position: absolute;
+        z-index: 1;
+        top: 100px;
+        left: -180px;
+    }
+    #list li{
+        z-index: 0;
+        position: absolute;
+        top: 20px;
+        height: auto;
+        width: 300px;
+        cursor: pointer;
+        list-style-type: none;
+        left: 378px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 12px rgba(200,200,200,200,1);
+        margin: 0
+    }
+    #list li img{
+        width: 300px;
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+    <h2>图片张数必须>=3</h2>
+    <ul id="list">
+        <li>
+            <img src="img/11.png">
+        </li>
+        <li>
+            <img src="img/12.jpg">
+        </li>
+        <li>
+            <img src="img/13.png">
+        </li>
+        <li>
+            <img src="img/14.png">
+        </li>
+        <li>
+            <img src="img/6.jpg">
+        </li>
+    </ul>
+</body>
+</html>

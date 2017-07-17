@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片轮播</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        #slideshow-container{
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides{
+            display: none;
+        }
+
+        #prev,#next{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: #fff;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            text-decoration: none;
+        }
+
+        #prev:hover, #next:hover {
+        background-color: rgba(0,0,0,0.6);
+        }
+
+        #next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        .text{
+            color:#f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext{
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            font-size: 18px;
+        }
+
+        .dot{
+            cursor: pointer;
+            height: 14px;
+            width: 14px;
+            margin: 0 2px;
+            background: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,.dot:hover{
+            background: #717171;
+        }
+
+        .fade{
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @-webkit-keyframes fade{
+            from{opacity: .4}
+            to{opacity: 1}
+        }
+        @keyframes fade{
+            from{opacity: .4}
+            to{opacity: 1}
+        }
+
+        @media only screen and(max-width:300px){
+            .prev,.next,.text{font-size: 11px;}
+        }
+    </style>
+    <script>
+    window.onload=function(){
+        var prev=document.getElementById("prev");
+        var next=document.getElementById("next");
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        var container=document.getElementById("slideshow-container");
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n+1);
+        }
+
+        function showSlides(n) {
+        var i;
+        
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            //for循环让每个div都隐藏起来
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            //for循环让每个小点active的样式清除
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        // 让当前的div显示并加上active样式
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+
+        prev.onclick=function(){
+            plusSlides(-1);
+        }
+        next.onclick=function(){
+            plusSlides(1);
+        }
+        for (var i = 0; i < dots.length; i++) {
+                        // 这里使用的是立即执行函数，
+                        (function(i) {
+                            dots[i].onclick = function() {
+                                currentSlide(i);
+                            }
+                        })(i)
+                    }
+
+                    //  此处就是大名鼎鼎的闭包
+
+
+
+        //自动播放
+        var timer;
+        function play(){
+            timer=setInterval(function(){
+                next.onclick();
+            },1500);
+        }
+        play();
+
+        //想看哪张图片就把图片停下
+        function stop(){
+            clearInterval(timer);
+        }
+
+        container.onmouseover=stop;
+        container.onmouseout=play;
+
+        };
+    </script>
+</head>
+<body>
+    <div id="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1/4</div>
+            <img src="img/1.jpg" alt style="width:100%">
+            <div class="text">塔塔塔塔</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2/4</div>
+            <img src="img/2.jpg" alt style="width:100%">
+            <div class="text">stack park</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3/4</div>
+            <img src="img/3.jpg" alt style="width:100%">
+            <div class="text">hello</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4/4</div>
+            <img src="img/4.jpg" alt style="width:100%">
+            <div class="text">WARII</div>
+        </div>
+        <a id="prev" >&#10094;</a>
+        <a id="next" >&#10095;</a>
+
+        <br>
+
+        <div style="text-align:center" id="dot">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot" ></span>
+        </div>
+    </div>
+</body>
+</html>

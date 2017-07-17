@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<style>
+*{margin: 0;padding: 0;}
+body{background:#F8F8FF;}
+#tab{width: 240px;position: absolute;left: 500px;background:lavender;margin: 0 auto;}
+#tab ul{margin-top: 20px;padding-left: 10px;padding-right: 10px;color: whitesmoke;} 
+li{list-style: none;float: left;width: 55px;margin: 8px;text-align: center;
+padding-top: 8px;font-family:"blackadder itc";background-color: gray;cursor:pointer;}
+#tab ul li h2{padding: 2px;}
+.text{width: 195px;border: 1px solid white;clear:both;
+margin: 20px; background: whitesmoke;color: grey;}
+.text h2{font-family:arial;font-size: 18px;margin: 5px;}
+.text p{font-family:"微软雅黑";font-size: 16px;margin: 5px;}
+.active{color:plum;background: white;}
+</style>
+<script>
+	window.onload=function(){
+		 var oUl=document.getElementById('ul1');
+		 var aLi=oUl.getElementsByTagName('li');
+		 var oText=document.getElementById('tab').getElementsByTagName('div')[0];
+	
+		 var data=[
+		 "快过年了，大家商量去哪玩吧",
+		 "好好学习天天向上",
+		 "还不学习，你想干嘛",
+		 "快学吧，不然还想咋滴",
+		 "不想学也得学，哈哈哈哈",
+		 "加油加油","加油加油加油","学好js，走遍天下都不怕","终于9月了","哈哈哈哈，10月了","学不动了",
+		 "拜拜"];
+		 for(var i=0;i<aLi.length;i++){
+		 	aLi[i].index=i;
+		 	aLi[i].onmouseover=function(){
+		 		for(var i=0;i<aLi.length;i++){
+		 			aLi[i].className='';
+		 		}
+		 		aLi[this.index].className='active';
+		 		oText.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+data[this.index]+'</p>';
+		 	};
+		 }
+	};
+</script>
+	</head>
+	<body>
+<div id="tab" class="calendar">
+	<ul id="ul1">
+		<li class="active" ><h2>1</h2><p>JAN</p></li>
+		<li><h2>2</h2><p>FER</p></li>
+		<li><h2>3</h2><p>MAR</p></li>
+		<li><h2>4</h2><p>APR</p></li>
+		<li><h2>5</h2><p>MAY</p></li>
+		<li><h2>6</h2><p>JUN</p></li>
+		<li><h2>7</h2><p>JUL</p></li>
+		<li><h2>8</h2><p>AUG</p></li>
+		<li><h2>9</h2><p>SEP</p></li>
+		<li><h2>10</h2><p>OCT</p></li>
+		<li><h2>11</h2><p>NOV</p></li>
+		<li><h2>12</h2><p>DEC</p></li>
+	</ul>
+	
+	<div class="text">
+		<h2>1月活动</h2>
+		<p>快过年了，大家商量去哪玩吧</p>
+	</div>
+</div>
+	</body>
+</html>

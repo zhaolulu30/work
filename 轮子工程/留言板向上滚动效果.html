@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			body{font-size: 12px;}
+			#box{background: url(img/pre/pre/WechatIMG14.png) 0 10px no-repeat;position:relative;width: 800px;margin: 0 auto;}
+			h3{padding-left:20px;padding-top: 10px;margin-bottom: 20px;}
+			h4{margin-bottom: 10px;}
+			textarea{width: 800px;margin-bottom: 10px;}
+			hr{margin-top: 10px;}
+			#content{overflow:hidden;height:80px;width:800px;margin:0 auto;padding: 10PX;}
+			#content1{height: auto;text-align: left;margin-left: 0;}
+			#content2{height: auto;text-align: left;margin-left: 0;}
+			#content1 li{list-style-type:none;height:22px;background:url() no-repeat left center;text-align:left;text-indent:15px;}
+			#content2 li{list-style-type:none;height:22px;background:url() no-repeat left center;text-align:left;text-indent:15px;}
+			
+		</style>
+		
+		<script> 
+			window.onload=function(){
+			var speed=40;
+			var oBtn=document.getElementById('btn');
+			var oText=document.getElementById('text');
+			oBtn.onclick=function(){
+				if(oText.value==""){
+					alert("输入内容不能为空");
+				}else{
+					oText.value="";
+					alert("已提交到后台数据库，审核后可以显示");
+					
+				}
+			}
+			var content=document.getElementById("content"); 
+			var content2=document.getElementById("content2"); 
+			var content1=document.getElementById("content1"); 
+			
+			content2.innerHTML=content1.innerHTML;
+			function Marquee(){ 
+			if(content2.offsetTop-content.scrollTop<=content2.offsetHeight) 
+			  content.scrollTop-=content1.offsetHeight;
+			else{ 
+			  content.scrollTop++; 
+			} 
+			} 
+			var MyMar=setInterval(Marquee,speed); 
+			content.onmouseover=function() {clearInterval(MyMar);} 
+			content.onmouseout=function() {MyMar=setInterval(Marquee,speed);} 
+	};
+</script>
+	</head>
+	<body>
+		<div id="box">
+			<h3>发表评论</h3>
+			<h4>来，说说你在做什么，想什么</h4>
+			<textarea id="text" rows="10"></textarea>
+			<input type="button" value="提交评论" id="btn" />
+			<input type="reset" value="重置" />
+			<hr />
+		</div>
+		<div id="wrap">
+		<div id="content">
+			<ul id="content1">
+				<li>看来今天收到礼品的亲们不少哦~</li>
+				<li>唉，总是在越忙的时候事情越多。。。我的神曲你在哪里呀~~~亲耐滴·你再不出来你就木有人疼了</li>
+				<li>小小骑手牵着小小马儿。你俩是来参加卖萌大赛的吧！！！！</li>
+				<li>在多说无益的时候，也许沉默就是最好的解释。</li>
+				<li>骗子的最终目的是让受害人把资金转移到所谓的“安全账户”里。警方提醒大家万一遇到类似情况，可以拨打正规客服电话咨询哦。</li>
+				<li>生命中往往有连舒伯特都无言以对的时刻，毕竟不是所有的是非都能条列清楚，甚至可能根本没有真正的是与非。</li>
+				<li>学会沉默，至少平静。有时候，被人误解，不想争辩，所以选择沉默。</li>
+				<li>本来就不是所有人都得了解你，因此不必对全世界喊话。</li>
+			</ul>
+			<div id="content2"></div>
+		</div>
+	</div>
+	
+	</body>
+</html>

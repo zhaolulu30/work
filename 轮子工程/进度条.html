@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #myProgressBar{
+        width: 100%;
+        background: #ddd;
+    }
+    #myBar{
+        width: 10%;
+        height:30px;
+        background: #4caf50;
+        text-align: center;
+        line-height: 30px;
+        color: white; 
+    }
+    </style>
+</head>
+<body>
+    <div id="myProgressBar">
+        <div id="myBar">10%</div>
+    </div>
+
+    <br/>
+    <button>Click Me</button>
+
+    <script>
+    window.onload=function(){
+        var btn=document.getElementsByTagName("button")[0];
+
+        btn.onclick=function(){
+            var elem=document.getElementById("myBar");
+            var width=10;
+            var timer=null;
+            timer=setInterval(function(){
+                if(width>=100){
+                    clearInterval(timer);
+                }else{
+                    width++;
+                    elem.style.width=width+'%';
+                    elem.innerHTML=width*1+'%';
+                }
+            },10)
+        };
+    };
+    </script>
+</body>
+</html>

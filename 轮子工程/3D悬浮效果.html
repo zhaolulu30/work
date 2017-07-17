@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jQuery/jquery.min.js"></script>
+    <title>3D悬浮</title>
+    <style>
+    *{margin: 0;padding: 0}
+    #box{
+        width: 100%;
+        height: 500px;
+        margin: 100px auto;
+        border: 1px solid #ddd;
+
+        perspective: 1000px;
+    }
+    #banner{
+        max-width:400px;
+        max-height: 300px; 
+        margin: 100px auto;
+        transition:transform 0.1s;
+        text-align: center;
+        line-height: 300px;
+        
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="banner">
+            <img src="img/4.jpg" alt="">
+        </div>
+    </div>
+    <script>
+    // window.onload=function(){
+    //     var box=document.getElementById("box");
+    //     var banner=document.getElementById("banner");
+    //     box.onmousemove=function(ev){
+    //         var ev=ev||event;
+    //         var x=ev.clientX - box.offsetLeft;
+    //         var y=ev.clientY - box.offsetTop;
+
+    //         var centerX = box.offsetWidth / 2;
+    //         var centerY = box.offsetHeight / 2;
+
+    //         var valueX=x -centerX;
+    //         var valueY=y -centerY;
+
+    //         var percentX =valueX /centerX;
+    //         var percentY =valueY /centerY;
+
+    //         var deg=20;
+
+    //         banner.style.transform='rotateX(' + deg* (-percentY ) + 'deg)'+ 'rotateY(' + deg*percentX + 'deg)';
+    //     };
+    //      box.onmouseleave=function(){
+    //             banner.style.transform="";
+    //         };  
+    // };
+    
+    $('#box').on('mousemove',function(e){
+        var offset = $('#box').offset();
+        var x=e.pageX -offset.left;
+        var y=e.pageY-offset.top;
+
+        var centerX = $('#box').outerWidth() / 2;
+        var centerY = $('#box').outerHeight() / 2;
+
+         var deltaX = x - centerX
+        var deltaY = y - centerY
+  
+        var percentX = deltaX / centerX
+        var percentY = deltaY / centerY
+
+        var deg=50;
+        $('#banner').css({
+            transform:'rotateX('+deg*-percentY+'deg)'+'rotateY('+deg*percentX+'deg)'
+        })
+
+        
+        })
+$('#box').on('mouseleave',function(){
+            $('#banner').css({
+                transform:''
+            })
+    })
+    </script>
+</body>
+</html>

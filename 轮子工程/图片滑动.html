@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#content{width: 400px;height:400px;border: 10px solid #DCDCDC;margin:60px auto 0;position: relative;}
+			#content a{width:40px;height:40px;background: black; border: 5px solid white;position: absolute;top:175px;
+			line-height:40px;color: #FFFFFF;font-size: 30px;font-weight: bold;text-align: center;text-decoration: none;
+			opacity: 0.3;filter: alpha(opacity:30);}
+			#content a:hover{
+				opacity: 0.9;
+				alpha(opacity:90)}
+			#pre{left: 10px;}
+			#next{right: 10px;}
+			#text1,#span{position: absolute;left: 0;width: 400px;height: 30px;line-height: 30px;text-align: center;color: #fff;
+			background: #000000;opacity: 0.6;alpha(opacity:60);}
+			#text1{bottom: 0;margin: 0; }
+			#span{top: 0;}
+			#img1{width: 400px;height: 400px;}
+			#xun{position: absolute;left: 0;text-align: center;top:10px;left:600px;margin: 0;}
+			#shun{position: absolute;left: 0;text-align: center;top:10px;left:680px;margin: 0;}
+			#oSpan{position:absolute;margin:0;top: 35px;text-align:center;left: 540px;}
+			
+		</style>
+	</head>
+	<script>
+		window.onload=function(){
+			var pre=document.getElementById('pre');
+			var next=document.getElementById('next');
+			var text1=document.getElementById('text1');
+			var span=document.getElementById('span');
+			var img1=document.getElementById('img1');
+			var oSpan=document.getElementById('oSpan');
+			var xun=document.getElementById('xun');
+			var shun=document.getElementById('shun');
+			
+			
+			var arrUrl=['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+			var arrText=['leave me','牵手','远方','海边'];
+			var num=0;
+		    var onoff=true;
+		    xun.onclick=function(){onoff=true;oSpan.innerHTML='图片可从最后一张跳转到第一张循坏切换';}
+		    shun.onclick=function(){onoff=false;oSpan.innerHTML='图片只能到最后一张或第一张切换';}
+			
+			function fnTab(){
+			span.innerHTML=num+1+'/'+arrUrl.length;
+			img1.src=arrUrl[num];
+			text1.innerHTML=arrText[num];
+			}
+			fnTab();
+			pre.onclick=function(){
+				num--;
+				if(num==-1){
+					if(onoff){
+					num=arrUrl.length-1;
+				}else{
+					alert('这已经是第一张，不能再往前了');
+					num=0;
+				}
+				}
+			fnTab();
+			}
+			next.onclick=function(){
+				num++;
+				if(num==arrUrl.length){
+					if(onoff){
+					num=0
+				}else{alert('这已经是最后一张了,不能再往后了');num=arrUrl.length-1;}
+				
+			}
+ 			fnTab();
+			}
+		
+			
+	}
+	</script>
+	<body>
+		<input id="xun" type="button" value="循环切换" />
+		<input id="shun" type="button" value="顺序切换" />
+		<span id="oSpan">图片可从最后一张跳转到第一张循坏切换</span>
+		<div id="content">
+			<a id="pre" href="javascript:"><</a>
+			<a id="next" href="javascript:">></a>
+			<p id="text1">这是第一张图片</p>
+			<span id="span">1/4</span>
+			<img id="img1" />
+		</div>
+	
+		
+	</body>
+</html>

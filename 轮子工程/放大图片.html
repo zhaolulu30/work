@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+ section.summary{
+        height: 100vh;
+        background: #f3f3f3;
+}
+section.summary .wrap{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 100%;
+     height: 100vh;
+     background: rgba(256, 256, 256, 0.5);
+
+}
+section.summary img.avatar{
+    width: 250px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+section.summary img:hover{
+    opacity: 0.7;
+}
+
+
+section.summary .text{
+    width: 300px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/*大图的背景*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background:rgba(0, 0, 0, 0.9);
+}
+#imgscale{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+#caption{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/*添加动画*/
+#imgscale,#caption{
+    animation-name: big;
+    animation-duration: 0.6s;
+    -webkit-animation-name: big;
+    -webkit-animation-duration: 0.6s;
+}
+
+@-webkit-keyframes big{
+    from{-webkit-transform: scale(0)}
+    to{-webkit-transform: scale(1)}
+}
+
+@keyframes big{
+    from{transform: scale(0)}
+    to{transform: scale(1)}
+}
+.close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,.close:focus{
+    color: #bbb;
+    cursor: pointch
+
+
+}
+
+@media only screen and(max-width:700px){
+    #imgscale{
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="summary section fp-section fp-table" data-anchor="page1">
+            <div class="wrap">
+                <h1>Scale</h1>	
+                <img id="img-origin" class="avatar" src="img/8.jpg" alt="hello word"/>
+                <div class="text">
+                    	
+                    <p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+                    
+                </div>
+            </div>
+    </section>
+    <div id="myModal" class="modal">
+        <span class="close" id="close">&times;</span>
+        <img  id="imgscale">
+        <div id="caption"></div>
+    </div>
+<script>
+    window.onload=function(){
+        var modal=document.getElementById("myModal");
+        var origin=document.getElementById("img-origin");
+        var close=document.getElementById("close");
+        var imgscale=document.getElementById("imgscale");
+        var captionText=document.getElementById("caption");
+
+        origin.onclick=function(){
+            modal.style.display="block";
+            imgscale.src=this.src;
+            captionText.innerHTML=this.alt;
+
+        };
+
+        close.onclick=function(){
+            modal.style.display="none";
+        };
+
+    };
+</script>
+</body>
+</html>

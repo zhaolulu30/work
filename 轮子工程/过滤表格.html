@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{box-sizing: border-box;}
+
+    #myInput{
+        width: 80%;
+        font-size: 16px;
+        padding: 12px 20px 12px 50px;
+        border:1px solid #ddd;
+        margin-bottom: 12px;
+        outline: none;
+        background: url(img/find.png) no-repeat 10px;
+    }
+    #find{
+        width: 10%;
+        font-size: 16px;
+        padding: 11px 20px 11px 40px;
+        margin-bottom: 12px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+    #myTable{
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+    #myTable th,#myTable td{
+        text-align: left;
+        padding: 12px;
+    }
+
+    #myTable tr{
+        border-bottom: 1px solid #ddd;
+    }
+
+    #myTable tr.header,#myTable tr:hover{
+        background: #f1f1f1;
+    }
+    </style>
+</head>
+<body>
+    <h2>Caption</h2>
+    <input type="text" id="myInput" placeholder="查找名字">
+    <input type="button" id="find" value="查找">
+    <table id="myTable">
+        <thead>
+        <tr class="header">
+            <th style="width:60%">Name</th>
+            <th style="width:40%">Country</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>zhaolulu</td>
+            <td>china</td>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>china</td>
+        </tr>
+        <tr>
+            <td>addy</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>hah</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Koniglich</td>
+            <td>Germany</td>
+        </tr>
+    </table>
+    <script>
+        window.onload=function(){
+            var input=document.getElementById("myInput");
+            function findTable(){
+            var i;
+            var filter=input.value.toUpperCase();//将输入框的内容转为大写
+            var table=document.getElementById("myTable");
+            var tr=table.getElementsByTagName("tr");
+            // var tbody=document.getElementsByTagName("tbody")[0];
+           var count = 0;
+            for(i=0;i<tr.length;i++){
+                //  alert(1);
+                td=tr[i].getElementsByTagName('td')[0];//遍历tr，找到姓名的那行
+                if(td){
+                    if(td.innerHTML.toUpperCase().indexOf(filter) > -1){  //如果在姓名那行找到与输入框匹配的内容
+                        tr[i].style.display="";
+                    }else{
+                        tr[i].style.display="none";
+                        count ++;
+                    }
+                }
+            }
+            if (count === tr.length-1){
+                alert("查无此人");
+                 input.value ="";
+                input.setAttribute("placeholder","查找名字");
+                for(i=0;i<tr.length;i++){
+                  tr[i].style.display="";  
+                }
+            }
+        }
+
+        var find=document.getElementById("find");
+        find.onclick=function(){
+            findTable();
+        };
+        
+     };
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤两边空格</title>
+    <style>
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .str{
+        outline: none;
+        margin-left: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="str" value="     需要过滤的空格    ">
+        <input type="button" id="btn" value="过滤">
+    </div>
+
+    <script>
+        window.onload=function(){
+            var str=document.getElementById("str");
+            var oBtn=document.getElementById("btn");
+            oBtn.onclick=function(){
+                //str.value=str.value.replace(/^\s+|\s$/g,""); 
+                 str.value=str.value.replace( /^(\s|\u00A0)+|(\s|\u00A0)+$/g, "" );   // \00a016是全角空格进制ASCII编码
+            }
+        };
+    </script>
+</body>
+</html>

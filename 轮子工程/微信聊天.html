@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<style>
+	*{margin: 0;padding: 0;}
+	li{list-style: none;}
+	.wrap{height: 500px; background: url(img/pre/WechatIMG9.png) no-repeat 500px 0;position: relative;margin-top:50px  ;}
+	.chat{width: 182px;height: 36px;background: #f1efef;position: absolute;left: 516px;top: 344px;}
+	
+	 #name{width: 24px;height: 24px;position: absolute;bottom: 4px;cursor: pointer;border-radius: 8px;border: 1px solid gainsboro;}
+	#text{width: 110px;height: 18px;position: relative;left:28px;border-radius: 4px;line-height: 18px;border: 1px solid #8b8b8b;outline: 0;padding: 4px;bottom:-4px;}
+	#enter{font-size:16px;font-family: "微软雅黑";position: relative;bottom:-4px;cursor: pointer;left: 24px;}
+	
+	.content{width: 172px;height:280px;border: 1px solid #b2b4b3;position: relative;left: 514px;top: 52px;padding: 6px;overflow: auto;}
+	.content li{line-height: 28px;margin-bottom: 15px;overflow: hidden;position: relative;}
+	#inhtml img{width: 25px;height: 25px;position: relative;}
+	.th{text-align: right;}
+	.th img{float: right;margin-left:15px ;}
+	.ds img{float: left;width: 25px;height: 25px;position: relative;margin-right: 15px;}
+	.th p{background: forestgreen;text-align: left;padding: 3px 5px;border-radius: 4px;color: white;float: right;max-width: 120px;font-size: 14px;font-family: "微软雅黑";word-wrap: break-word;}
+	.ds p{background: gainsboro;float: left;text-align: left;padding: 3px 4px;border-radius: 4px;color: white;max-width: 120px;font-size: 14px;font-family: "微软雅黑";word-wrap: break-word;}
+	.ds{text-align: left;}
+	.sent1{width: 0;height: 0;border:8px solid ;position: absolute;right: 24px;top: 4px;border-color:white white white forestgreen; }
+	.sent2{width: 0;height: 0;border:8px solid ;position: absolute;left: 24px;top: 4px;border-color:white gainsboro white white; }
+</style>
+<script>
+	window.onload=function(){
+        var arr = ['img/pre/Unknown.jpg','img/pre/2.jpg'];
+        
+        var oName=document.getElementById('name');
+        //得到输入内容
+        var oText=document.getElementById('text');
+        //显示输入内容
+        var oWrite=document.getElementById('inhtml');
+        oWrite.focus();
+        var oSet=document.getElementById('enter');
+        //默认显示醉啦图片
+        var offon=true;
+        oName.onclick=function(){
+        		if(offon){
+        			oName.src=arr[1];
+        			offon=false;
+        			oText.focus();
+        		}else{
+        			oName.src=arr[0];
+        			offon=true;
+        			oText.focus();
+        		}
+        };
+       //点击发送事件
+       
+       
+		oSet.onclick=function(){
+			if(oText.value.length==0||oText.value.replace(/(^\s*)|(\s*$)/g,"")==""){
+					return false;
+				}
+			if(offon){
+				oWrite.innerHTML+='<li class="th">'+'<img src='+arr[0]+"/><p>"+oText.value+'<span class="sent1" ></span>'+"</p></li>";
+			}else{
+				oWrite.innerHTML+='<li class="ds">'+'<img src='+arr[1]+"/><p>"+oText.value+'<span class="sent2" ></span>'+"</p></li>";
+			}
+			oText.value='';
+			oText.focus();
+		};
+	};
+</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="content">
+				<ul id="inhtml"></ul>
+			</div>
+			<div class="chat">
+			  
+			   	<img src="img/pre/Unknown.jpg" id="name" />
+			   
+			   <input type="text" id="text" />
+			   <span id="enter">发送</span>
+			 
+			</div>
+		</div>
+	</body>
+</html>

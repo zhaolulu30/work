@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>ali go</title>
+    <script>
+			// 通过dpr设置缩放比例，实现布局视口大小
+			var dpr = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale='+dpr+',minimum-scale='+dpr+',maximum-scale='+dpr+'" />')
+			// 动态计算html的font-size
+            var fz = document.documentElement.clientWidth / 10; //得到布局视口下rem的基准值（以iPhone6为例 1rem＝75px），那么设计稿正好也是 750，所以对应的关系 clientWidth / 10＝＝设计稿的尺寸/x, 那么x=设计稿的尺寸/rem基准值。如果是iphone6 plus rem基准值等于clientWidth / 10 等于124.2，那么x＝750/124.2。
+			document.getElementsByTagName('html')[0].style.fontSize = fz + 'px';
+		
+		</script>
+</head>
+<body>
+    <header id="head">
+        <a class="scan"></a>
+        <form action="#" class="form">
+            <i class="img-search"></i>
+            <input type="text" class="h-search">
+            <span>目的地/景点/酒店/门票</span>
+        </form>
+        <a class="message"></a>
+    </header>   
+    <section id="content">
+        <div class="c-banner">
+            <a href="" class="tab">
+                <img src="img/seek.jpg" alt="">
+            </a>
+            <nav class="clear">
+                <a href="#"></a>
+                <a href="#" class="color"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </nav>
+        </div>
+        <div class="c-sort clear">
+            <a href="">
+                <img src="img/sort1.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort2.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort3.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort4.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort5.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort6.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort7.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort8.png" alt="">
+            </a>
+        </div>
+        <div class="c-sort2 cleae">
+            <a href="">
+                <img src="img/sort2-1.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort2-2.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort2-3.png" alt="">
+            </a>
+            <a href="" class="noborder">
+                <img src="img/sort2-3.png" alt="">
+            </a>
+            <a href="">
+                <img src="img/sort2-4.png" alt="">
+            </a>
+            <a href="" class="noborder">
+                <img src="img/sort2-5.png" alt="">
+            </a>
+        </div>
+        <div class="c-headline clear">
+            <h3>
+                <a href=""></a>
+            </h3>
+            <div class="headline-con">
+                <a href="">
+                    <span>·</span>
+                    小时候妈妈的味道，你有多少年不曾尝...
+                </a>
+                <a href="">
+                     <span>·</span>
+                     周边游|容易被念错的广西小镇，看看...
+                </a>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="c-bargains clear">
+            <a href="" class="traver pr">
+                <i class="icon  pa"></i>
+                <span class="ct-text pa">限时品质促销</span>
+                <span class="ct-money pa">
+                    ¥<em>499</em>起
+                </span>
+            </a>
+            <a href="" class="air-ticket pr">
+                <i class="icon pa"></i>
+                <span class="ct-text pa">有障放心飞</span>
+            </a>
+            <a href="" class="grogshop pr">
+                <i class="icon pa"></i>
+                <span class="ct-text pa">想不到的低价</span>
+            </a>
+        </div>
+        <div class="hr"></div>
+        <div class="live">
+            <div class="live-title pr">
+                <span class="title pa">阿里旅行直播</span>
+            </div>
+            <div class="live-box">
+                <a href="" class="box-left box clear">
+                    <span class="text1">深度玩转洱海</span>
+                    <span class="text2">游船趣味环游，更多好礼相送</span>
+                    <img src="img/ds-box2.jpg" alt="">
+                </a>
+                <a href="" class="box-right box clear">
+                    <span class="text1">深度玩转洱海</span>
+                    <span class="text2">游船趣味环游，更多好礼相送</span>
+                    <img src="img/ds-box2.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="travel-around">
+            <h3 class="ta-title">
+                <span class="title">乐活周边游</span>
+            </h3>
+            <a href="" class="ta-img db">
+                <img src="img/ambitus.jpg" alt="">
+            </a>
+            <a href="" class="ta-text">
+
+					京津冀这些地方，有钱都不敢去！据说有人都吓跪了...
+				
+            </a>
+            <div class="ta-bottom clear">
+                <a href="" class="left bg">玩转京津冀</a>
+                <span class="right">
+                    <a href="" class="prevview">6.6万</a>
+                     <a href="" class="zan">666</a>
+                </span>
+            </div>
+            <ul class="ta-bottom2 clear">
+                <li class="border">
+                    <a href="" class="tab-img db">
+                        <img src="img/ca-bottom1.jpg" alt="">
+                    </a>
+                    <a href="" class="tab-text" >
+
+							在北京有一条为吃货而开的地铁，竟然可以转着圈儿..
+                    </a>
+                    <span class="tab-box clear">
+                        <a href="" class="text">背景潮生活</a>
+                        <span class="right">
+                            <a href="" class="prevview">55988</a>
+                            <a href="" class="zan">78</a>
+                        </span>
+                    </span>
+                </li>
+                 <li>
+                    <a href="" class="tab-img db">
+                        <img src="img/ca-bottom1.jpg" alt="">
+                    </a>
+                    <a href="" class="tab-text" >
+
+							在北京有一条为吃货而开的地铁，竟然可以转着圈儿..
+                    </a>
+                    <span class="tab-box clear">
+                        <a href="" class="text">背景潮生活</a>
+                        <span class="right">
+                            <a href="" class="prevview">55988</a>
+                            <a href="" class="zan">78</a>
+                        </span>
+                    </span>
+                </li>
+                 <li class="border">
+                    <a href="" class="tab-img">
+                        <img src="img/ca-bottom1.jpg" alt="">
+                    </a>
+                    <a href="" class="tab-text" >
+
+							在北京有一条为吃货而开的地铁，竟然可以转着圈儿..
+                    </a>
+                    <span class="tab-box clear">
+                        <a href="" class="text">背景潮生活</a>
+                        <span class="right">
+                            <a href="" class="prevview">55988</a>
+                            <a href="" class="zan">78</a>
+                        </span>
+                    </span>
+                </li>
+                 <li>
+                    <a href="" class="tab-img db">
+                        <img src="img/ca-bottom1.jpg" alt="">
+                    </a>
+                    <a href="" class="tab-text" >
+							在北京有一条为吃货而开的地铁，竟然可以转着圈儿..
+                    </a>
+                    <span class="tab-box clear">
+                        <a href="" class="text">背景潮生活</a>
+                        <span class="right">
+                            <a href="" class="prevview">55988</a>
+                            <a href="" class="zan">78</a>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+            <a href="" class="ca-n db">
+				发现N中种<span>周末玩法</span>&gt;
+			</a>
+            <div class="hr"></div>
+        </div>
+        <div class="c-headline2">
+            <h3 class="ch2-title">
+                <span class="title">旅行头条</span>
+            </h3>
+            <div class="ch2-img ch2-box">
+                <a href="" class="ca-img">
+                    <img src="img/ch2.jpg" alt="">
+                </a>
+                <a href="" class="ta-text">
+						最适合穷游的8个国家，全部白菜价！
+				</a>
+                <div class="ta-bottom clear">
+                    <a href="" class="left bg2">周末去哪玩</a>
+                    <span class="right">
+                        <a href="" class="prevview">12.2万</a>
+                        <a href="" class="zan">7800</a>
+                    </span>
+               </div>
+            </div>
+            <ul>
+                <li class="ch2-box clear">
+                    <div class="box-left1">
+                        <a href="" class="ca-text">
+								全球签证最难的6个国家，过去3个算你厉害！
+                        </a>
+                        <div class="ta-bottom">
+                            <a href="" class="left bg2">一块旅行</a>
+                            <span class="right">
+                                <a href="" class="prevview">18.8万</a>
+                                <a href="" class="zan">70000</a>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="" class="box-right1 db">
+                        <img src="img/ch2-box1.jpg" alt="">
+                    </a>
+                </li>
+                 <li class="ch2-box clear">
+                    <div class="box-left1">
+                        <a href="" class="ca-text">
+								全球签证最难的6个国家，过去3个算你厉害！
+                        </a>
+                        <div class="ta-bottom">
+                            <a href="" class="left bg2">一块旅行</a>
+                            <span class="right">
+                                <a href="" class="prevview">18.8万</a>
+                                <a href="" class="zan">70000</a>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="" class="box-right1 db">
+                        <img src="img/ch2-box1.jpg" alt="">
+                    </a>
+                </li>
+                 <li class="ch2-box clear">
+                    <div class="box-left1">
+                        <a href="" class="ca-text">
+								全球签证最难的6个国家，过去3个算你厉害！
+                        </a>
+                        <div class="ta-bottom">
+                            <a href="" class="left bg2">一块旅行</a>
+                            <span class="right">
+                                <a href="" class="prevview">18.8万</a>
+                                <a href="" class="zan">70000</a>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="" class="box-right1 db">
+                        <img src="img/ch2-box1.jpg" alt="">
+                    </a>
+                </li>
+                 <li class="ch2-box clear">
+                    <div class="box-left1">
+                        <a href="" class="ca-text">
+								全球签证最难的6个国家，过去3个算你厉害！
+                        </a>
+                        <div class="ta-bottom">
+                            <a href="" class="left bg2">一块旅行</a>
+                            <span class="right">
+                                <a href="" class="prevview">18.8万</a>
+                                <a href="" class="zan">70000</a>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="" class="box-right1 db">
+                        <img src="img/ch2-box1.jpg" alt="">
+                    </a>
+                </li>
+                 <li class="ch2-box clear">
+                    <div class="box-left1">
+                        <a href="" class="ca-text">
+								全球签证最难的6个国家，过去3个算你厉害！
+                        </a>
+                        <div class="ta-bottom">
+                            <a href="" class="left bg2">一块旅行</a>
+                            <span class="right">
+                                <a href="" class="prevview">18.8万</a>
+                                <a href="" class="zan">70000</a>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="" class="box-right1 db">
+                        <img src="img/ch2-box1.jpg" alt="">
+                    </a>
+                </li>
+                <a href="" class="ca-n db">
+				    阅读更多<span>旅游头条</span>&gt;
+			    </a>
+            </ul>
+            <div class="hr"></div>
+            <div class="c-find">
+                <h3 class="ch2-title">
+                    <span class="title">本月热门目的地</span>
+                </h3>
+                <nav class="cd-box clear">
+					<a href="" class="cd-img db pr">
+						<img src="img/cd2.jpg">
+						<span class="text1 pa">丽江</span>
+						<span class="text2 pa">故事之城 艳遇之都</span>
+					</a>
+					<a href="" class="cd-img db pr">
+						<img src="img/cd2.jpg">
+						<span class="text1 pa">丽江</span>
+						<span class="text2 pa">故事之城 艳遇之都</span>
+					</a>
+					<a href="" class="cd-img db pr">
+						<img src="img/cd2.jpg">
+						<span class="text1 pa">丽江</span>
+						<span class="text2 pa">故事之城 艳遇之都</span>
+					</a>
+                    <a href="" class="ca-n db">
+				        搜索更多<span>目的地</span>&gt;
+			        </a>
+				</nav>
+            </div>
+            <div class="c-find"></div>
+                <h3 class="ch2-title">
+                    <span class="title">猜你喜欢</span>
+                </h3>
+                <div class="ch2-img ch2-box">
+                <a href="" class="ca-img">
+                    <img src="img/ch2.jpg" alt="">
+                </a>
+            </div>
+            </div>
+        
+    </section>
+    <footer id="foot">
+        <a href="" class="page"></a>
+        <a href="" class="discover"></a>
+        <a href="" class="journey"></a>
+        <a href="" class="me"></a>
+    </footer>
+</body>
+</html>
