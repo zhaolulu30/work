@@ -1,21 +1,7 @@
 
             var close=document.getElementById("close");
             var open=document.getElementById("open");
-            var mySidenav=document.getElementById("mySidenav");
-
-            open.onmouseover=function(){
-                mySidenav.style.width="280px";
-                document.getElementById("main").style.marginLeft="-280px";
-                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-            };
-
-            close.onclick=function(){
-                mySidenav.style.width="0";
-                document.getElementById("main").style.marginLeft="0";
-                document.body.style.backgroundColor="white";
-            };
-
-
+            
     function openCon(evt,page){
         var i, tabcontent, tablinks;
 
